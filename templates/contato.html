@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet"  href="{{ url_for('static', filename='estilo.css') }}"> 
+{% endblock %}
+{% block content %}
+    <div>
+        <!--Corpo da Pagina. TXT-->
+        <h2>Entre em contato</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet mollis nisl.</p>
+        <hr>
+        <p>Seu e-mail:</p>
+        <input type="email">
+        <p>Assunto:</p>
+        <input type="text">
+        <p>Descrição:</p>
+        <input type="text"><br>
+        <input type="button" value="Enviar">
+
+    </div>
+{% endblock %}
