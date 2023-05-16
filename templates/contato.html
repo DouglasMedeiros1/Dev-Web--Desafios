@@ -1,21 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>contato</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css')}}">
+    </head>
+    <body background="static/imagens/fundo2.png">
+        {%  extends "bootstrap/base.html" %}
+        {% block content %}
+        <table border="0" width="900" align="center">
 
-{% extends "base.html" %}
-{% block head %}
-    <link rel="stylesheet"  href="{{ url_for('static', filename='estilo.css') }}"> 
-{% endblock %}
-{% block content %}
-    <div>
-        <!--Corpo da Pagina. TXT-->
-        <h2>Entre em contato</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet mollis nisl.</p>
-        <hr>
-        <p>Seu e-mail:</p>
-        <input type="email">
-        <p>Assunto:</p>
-        <input type="text">
-        <p>Descrição:</p>
-        <input type="text"><br>
-        <input type="button" value="Enviar">
+            <tr>
+                <td height="89"><img src="static/imagens/logo.png"> </td>
+                <td align="right">
+                    <a href="/index">Home</a> |
+					<a href="/quemsomos">Quem somos</a> |
+					<a href="/contatos">Contato</a> |
+                    <a href="/users">Lista</a>
+                </td>
+            </tr>
 
-    </div>
-{% endblock %}
+            <tr>
+                <td colspan="2">
+                    <h2>Entre em contato</h2>
+                    <P>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet mollis nisl.
+                    </P>
+
+                    <hr>
+
+                    <form method="post" action="/contatos">
+
+                        Seu e-mail: <br>
+                        <input type="email" name="email" required><br>
+
+                        Assunto: <br>
+                        <input type="text" name="assunto" required><br>
+
+                        Descrição : <br>
+                        <input type="text" name="descricao" required><br>
+
+                        <input type="submit">
+                    </form>
+
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2" align="center">
+                    <h4>Todos os direitos reservados</h4>
+                </td>
+            </tr>
+        </table>
+        {% endblock content %}
+    </body>
+</html>
